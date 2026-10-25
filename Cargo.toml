@@ -1,0 +1,43 @@
+[package]
+name = "alhazen-gpui-pre"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+description = "alhazen-gpui ported to gpui-pre 0.3.8"
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/mo7984130/alhazen-gpui-pre"
+repository = "https://github.com/mo7984130/alhazen-gpui-pre"
+documentation = "https://docs.rs/alhazen-gpui-pre"
+keywords = ["gpui", "video", "player", "media"]
+categories = ["multimedia::video", "gui"]
+
+[features]
+default = [
+    "native",
+    "http",
+    "hls",
+    "audio-output",
+    "ffmpeg-cli",
+    "media-foundation",
+    "nvdec",
+    "native-aac",
+    "native-mp3",
+]
+native = ["alhazen-core/native"]
+http = ["alhazen-core/http"]
+hls = ["alhazen-core/hls"]
+audio-output = ["alhazen-core/audio-output"]
+ffmpeg-cli = ["alhazen-core/ffmpeg-cli"]
+media-foundation = ["alhazen-core/media-foundation"]
+nvdec = ["alhazen-core/nvdec"]
+native-aac = ["alhazen-core/native-aac"]
+native-mp3 = ["alhazen-core/native-mp3"]
+
+[dependencies]
+gpui = { package = "gpui-pre", version = "=0.3.8" }
+alhazen-core = { version = "0.6", default-features = false }
+image = { version = "0.25.1", default-features = false, features = ["png", "jpeg"] }
+
+[package.metadata.docs.rs]
+apt_packages = ["nasm"]
