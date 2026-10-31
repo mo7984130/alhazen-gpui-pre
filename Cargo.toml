@@ -1,16 +1,19 @@
 [package]
-name = "alhazen-gpui-pre"
-version = "0.1.0"
+name = "alhazen-ms-gpui"
+version = "0.1.1"
 edition = "2024"
 rust-version = "1.92"
-description = "alhazen-gpui ported to gpui-pre 0.3.8"
+description = "Memory Seek fork of alhazen-gpui, targeting gpui-pre 0.3.10"
 license = "Apache-2.0"
 readme = "README.md"
-homepage = "https://github.com/mo7984130/alhazen-gpui-pre"
-repository = "https://github.com/mo7984130/alhazen-gpui-pre"
-documentation = "https://docs.rs/alhazen-gpui-pre"
+homepage = "https://github.com/mo7984130/alhazen-ms-gpui"
+repository = "https://github.com/mo7984130/alhazen-ms-gpui"
+documentation = "https://docs.rs/alhazen-ms-gpui"
 keywords = ["gpui", "video", "player", "media"]
 categories = ["multimedia::video", "gui"]
+
+[lib]
+name = "alhazen_ms_gpui"
 
 [features]
 default = [
@@ -24,19 +27,19 @@ default = [
     "native-aac",
     "native-mp3",
 ]
-native = ["alhazen-core/native"]
-http = ["alhazen-core/http"]
-hls = ["alhazen-core/hls"]
-audio-output = ["alhazen-core/audio-output"]
-ffmpeg-cli = ["alhazen-core/ffmpeg-cli"]
-media-foundation = ["alhazen-core/media-foundation"]
-nvdec = ["alhazen-core/nvdec"]
-native-aac = ["alhazen-core/native-aac"]
-native-mp3 = ["alhazen-core/native-mp3"]
+native = ["alhazen-ms-core/native"]
+http = ["alhazen-ms-core/http"]
+hls = ["alhazen-ms-core/hls"]
+audio-output = ["alhazen-ms-core/audio-output"]
+ffmpeg-cli = ["alhazen-ms-core/ffmpeg-cli"]
+media-foundation = ["alhazen-ms-core/media-foundation"]
+nvdec = ["alhazen-ms-core/nvdec"]
+native-aac = ["alhazen-ms-core/native-aac"]
+native-mp3 = ["alhazen-ms-core/native-mp3"]
 
 [dependencies]
-gpui = { package = "gpui-pre", version = "=0.3.8" }
-alhazen-core = { version = "0.6", default-features = false }
+gpui = { package = "gpui-pre", version = "=0.3.10" }
+alhazen-ms-core = { path = "../alhazen-ms-core", version = "0.6.1", default-features = false }
 image = { version = "0.25.1", default-features = false, features = ["png", "jpeg"] }
 
 [package.metadata.docs.rs]

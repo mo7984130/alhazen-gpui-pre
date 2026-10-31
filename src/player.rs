@@ -1,6 +1,6 @@
 use std::{collections::VecDeque, sync::Arc, time::Duration};
 
-use alhazen_core::{Metadata, Player, PlayerConfig, PlayerEvent, PlayerState, Source, VideoFrame};
+use alhazen_ms_core::{Metadata, Player, PlayerConfig, PlayerEvent, PlayerState, Source, VideoFrame};
 use gpui::{App, Context, EventEmitter, RenderImage, Task};
 
 /// Paints a replaced frame image stays in the sprite atlas before it is dropped. GPUI's Blade
@@ -300,7 +300,7 @@ impl VideoPlayer {
 
     /// HLS: the stream's variants (qualities); empty for other media and while loading.
     #[cfg(feature = "hls")]
-    pub fn variants(&self) -> Vec<alhazen_core::hls::VariantInfo> {
+    pub fn variants(&self) -> Vec<alhazen_ms_core::hls::VariantInfo> {
         self.player
             .as_ref()
             .map(|p| p.variants())
@@ -316,7 +316,7 @@ impl VideoPlayer {
     /// HLS: plays this variant from the next segment on; `Variant::Auto` (the default) adapts to
     /// the connection.
     #[cfg(feature = "hls")]
-    pub fn set_variant(&mut self, v: alhazen_core::hls::Variant, cx: &mut Context<Self>) {
+    pub fn set_variant(&mut self, v: alhazen_ms_core::hls::Variant, cx: &mut Context<Self>) {
         if let Some(p) = &self.player {
             p.set_variant(v);
         }
