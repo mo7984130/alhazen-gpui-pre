@@ -1,6 +1,6 @@
 [package]
 name = "alhazen-ms-gpui"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 rust-version = "1.92"
 description = "Memory Seek fork of alhazen-gpui, targeting gpui-pre 0.3.10"
@@ -39,7 +39,7 @@ native-mp3 = ["alhazen-ms-core/native-mp3"]
 
 [dependencies]
 gpui = { package = "gpui-pre", version = "=0.3.10" }
-alhazen-ms-core = { version = "0.6.1", default-features = false }
+alhazen-ms-core = { version = "0.6.2", default-features = false }
 image = { version = "0.25.1", default-features = false, features = ["png", "jpeg"] }
 
 [package.metadata.docs.rs]

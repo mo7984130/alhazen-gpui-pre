@@ -5,8 +5,8 @@
 
 上游绑定的是 `gpui 0.2.2`，与 `gpui-kit 0.8.x` 使用的 `gpui-pre 0.3.10` 不是同一个 crate。
 本 crate 只改了 GPUI 适配层：`Element::paint` 的 `paint_image` 签名、`VideoFrame` 使用
-`alhazen-ms-core 0.6.1` 的 `Cpu` 变体，并移除了上游依赖的 `frame_formats`。上游 0.6.0 的
-`videotoolbox` feature 在 `alhazen-ms-core 0.6.1` 中不存在，本 crate 没有暴露它。
+`alhazen-ms-core 0.6.2` 的 `Cpu` 变体，并移除了上游依赖的 `frame_formats`。上游 0.6.0 的
+`videotoolbox` feature 在 `alhazen-ms-core 0.6.2` 中不存在，本 crate 没有暴露它。
 
 ## 构建要求
 
